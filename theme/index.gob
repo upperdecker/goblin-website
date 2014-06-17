@@ -12,10 +12,13 @@
     <link href="/theme/css/vendor/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/theme/css/carousel.css" rel="stylesheet">
+    <!--link href="/theme/css/carousel.css" rel="stylesheet"-->
 
     <!-- Custom styles -->
     <link href="/theme/css/styles/style.css" rel="stylesheet">
+
+    <!-- Animation styles -->
+    <link href="/theme/css/styles/animate.min.css" rel="stylesheet">
     
     <!-- Google font -->
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -38,7 +41,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="/index.html">
-              	{{site_title}}: {{site_description}}
+                {{site_title}}: {{site_description}}
               </a>
             </div>
             <div class="navbar-collapse collapse">
@@ -57,16 +60,19 @@
     <div class="row green">
         <div class="insidecontainer greenpad">
             <!--<img src="/theme/img/goblin_logo.png" data-src="/theme/img/goblin_logo.png" alt="Goblin">-->
-            <div class="col-md-5">
+            <div class="col-md-5 shaker">
                 <h1>{{site_title}}</h1>
                 <p>Goblin is a simple, customizable and easily accessible content management system designed for themers.
                 </p>
-                <button>Download</button><br>
-                <a href="https://github.com/maned/goblin-website" class="git"><img src="/theme/img/github.png" align="texttop" />Goblin on GitHub</a>
-                <a href="" class="twitter"><img src="/theme/img/twitter.png" align="texttop" />  @Goblin </a>
+                <!--button onClick="https://github.com/maned/goblin'">Download</button-->
+                <input type=button onClick="location.href='https://github.com/maned/goblin'" value='Download'>
+                <br>
+                <a href="https://github.com/maned/goblin" class="git"><img src="/theme/img/github.png" align="texttop" />Goblin on GitHub</a>
+                <!--a href="" class="twitter"><img src="/theme/img/twitter.png" align="texttop" />  @Goblin </a-->
             </div>
             <div class="col-md-5">
-            	<img src="/theme/img/goblin1.png" class="gobby" />
+              <img src="/theme/img/goblin.png" class="gobby" />
+              <div class="shadow">&nbsp;</div>
             </div>
         </div>
     </div>
@@ -88,19 +94,19 @@
 
       <!-- START THE FEATURETTES -->
       <div class="row featurette1">
-      	<div class="insidecontainer">
-        	<div class="col-md-6">
-            	<h2 class="featurette-heading">Goblin: A pure CMS</h2>
-                <p>{{{page_content}}}</p>
+        <div class="insidecontainer">
+          <div class="col-md-6">
+              <h2 class="featurette-heading">A pure CMS</h2>
+                <p>Built specifically for non-blogging websites, Goblin is meant to be used by people who need to make static websites with a CMS fast and do it beautifully.</p>
             </div>
             <div class="col-md-4 text-right" style="padding-top: 25px;">
-                <button class="greenbtn">Download</button>
+                <input type=button onClick="location.href='https://github.com/maned/goblin'" value='Download' class="greenbtn">
             </div>
         </div>
       </div>
-      <div class="row picture-row">
+      <div class="row white">
           <div class="insidecontainer pad120">
-          	<div class="col-md-3 text-center">
+            <div class="col-md-3 text-center">
                 <img src="/theme/img/js.png" />
                 <h3>Javascript. Everywhere.</h3>
                 <p>Goblin is coded entirely in Javascript, both on the client- and server-sides, offering a level of comfortability that's not obtaininable in other CMS solutions.</p>
@@ -112,7 +118,7 @@
             </div>
             <div class="col-md-3 text-center">
                 <img src="/theme/img/copyleft.png" />
-                <h3>Javascript. Everywhere.</h3>
+                <h3>Open Source. And free.</h3>
                 <p>Goblin is released under the GNU Public License, Version 3, meaning it's completely free software -- you can read and modify the code, and benefit from (and participate with) a growing Goblin Community.</p>
             </div>
           </div>
@@ -123,11 +129,11 @@
 
       <!-- FOOTER -->
       <footer>
-      	<div class="insidecontainer">
-        	<p class="col-md-10">Powered by <a href="http://goblin.jit.su/">Goblin</a>. Contribute to <a href="https://github.com/maned/goblin-website" target="_blank"> this website</a>.<a href="#" class="pull-right padright">Back to top</a></p>
+        <div class="insidecontainer">
+          <p class="col-md-10">Powered by <a href="http://goblin.jit.su/">Goblin</a>. Contribute to <a href="https://github.com/maned/goblin-website" target="_blank"> this website</a>.<a href="#" class="pull-right padright">Back to top</a></p>
         </div>
-      	<!--div class="insidecontainer">
-        	<p class="col-md-8">Powered by <a href="http://goblin.jit.su/">Goblin</a>. Contribute to <a href="https://github.com/maned/goblin-website" target="_blank"> this website</a>.</p>
+        <!--div class="insidecontainer">
+          <p class="col-md-8">Powered by <a href="http://goblin.jit.su/">Goblin</a>. Contribute to <a href="https://github.com/maned/goblin-website" target="_blank"> this website</a>.</p>
             <p class="col-md-4 text-right" style="padding-right: 50px;"><a href="#">Back to top</a></p>
         </div-->
       </footer>
@@ -149,6 +155,10 @@
 
       ga('create', '{{ga_id}}', 'jit.su');
       ga('send', 'pageview');
+
+      $('.gobby').addClass('animated bounceInDown');
+      $('.shadow').addClass('animated fadeOutUp');
+      $('.shaker').addClass('animated bounce');
 
     </script>
   </body>
